@@ -9,15 +9,11 @@ export default {
   name: 'app'
 }
 </script>
-<!--<link rel="stylesheet" href="../assets/font_dt4awi7oqfpkqpvi/iconfont.css">-->
-
+<!-- <link rel="stylesheet" href="../assets/font_dt4awi7oqfpkqpvi/iconfont.css"> -->
+<style lang="scss" scoped>
+  @function px2rem($px){
+  @return $px/100px *1rem;
+  }
+  </style>
 <style src="./assets/font_dt4awi7oqfpkqpvi/iconfont.css"></style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /*margin-top: 60px;*/
-}
-</style>
+
