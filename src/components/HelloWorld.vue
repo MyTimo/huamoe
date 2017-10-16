@@ -179,58 +179,15 @@
 
     <div class="w1" style="width:100%;background:#ededf1;height:50px;
     padding:10px 0 10px 0">
-     <div class="w1-1" style="text-align:center;width:100%;background:#e66988;height:40px;font-size:20px;color:white">
-      <span style="line-height:40px">更多推荐画师</span>
+     <div class="w1-1" style="text-align:center;width:100%;background:#e66988;height:40px;font-size:20px;color:white;padding-bottom:40px;">
+      <span style="line-height:40px;">更多推荐画师</span>
      </div>
     </div>
-    <div class="footer">
-     <div class="footer-1">
-      <div class="b">
-       <div class="font">
-        <i class="iconfont">&#xe600;</i>
-       </div>
-       <div class="wen">
-        <span>首页</span>
-       </div>
-      </div>
-      <div class="b">
-       <div class="font">
-        <i class="iconfont">&#xe6d7;</i>
-       </div>
-       <div class="wen">
-        <span>画师</span>
-       </div>
-      </div>
-      <div class="b">
-       <div class="font">
-        <i class="iconfont">&#xe644;</i>
-       </div>
-       <div class="wen">
-        <span>发布</span>
-       </div>
-      </div>
-      <div class="b">
-       <div class="font">
-        <i class="iconfont">&#xe64e;</i>
-       </div>
-       <div class="wen">
-        <span>约稿</span>
-       </div>
-      </div>
-      <div class="b">
-       <div class="font">
-        <i class="iconfont">&#xe632;</i>
-       </div>
-       <div class="wen">
-        <span>我的</span>
-       </div>
-      </div>
-     </div>
-    </div> 
+    <footers></footers>
   </div>
 </template>
   
-</style>
+
 
 <script>
 import {Swipe, SwipeItem} from 'vue-swipe';
@@ -302,6 +259,8 @@ import 'vue-swipe/dist/vue-swipe.css';
     color: black;
     text-decoration:none;
   }
+
+  
 
   .header input{
     width:100%;
@@ -661,33 +620,7 @@ import 'vue-swipe/dist/vue-swipe.css';
    left:0
   }
 
-  .footer{
-   
-   .footer-1{
-    
-    width:100%;
-    height:px2rem(50px);
-    margin-top:px2rem(-80px);
-    margin-bottom:px2rem(30px);
-    
-    .b{
-     float:left;
-     width:20%;
-     height:px2rem(50px);
-     text-align:center;
-     
-
-     .font{
-
-     }
-     .wen{
-      font-size:px2rem(14px);
-      margin-top:px2rem(-20px);
-     }
-    }
-   }
-   
-  }
+  
 
 </style>
 
