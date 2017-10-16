@@ -14,6 +14,6 @@ export default {
   @function px2rem($px){
   @return $px/100px *1rem;
   }
-  </style>
-<style src="./assets/font_dt4awi7oqfpkqpvi/iconfont.css"></style>
+</style>
+<style src="./assets/font_hno76w4jzrpphkt9/iconfont.css"></style>
 
