@@ -5,6 +5,15 @@ import Huashi from '@/components/Huashi'
 import Fabu from '@/components/Fabu'
 import Yuegao from '@/components/Yuegao'
 import Wode from '@/components/Wode'
+import Tuijian from '@/components/tuijian'
+import Chushou from '@/components/chushou'
+import Thuazuo from '@/components/Thuazuo'
+import Tyonghu from '@/components/Tyonghu'
+import Thuodong from '@/components/Thuodong'
+import Tzhenggao from '@/components/Tzhenggao'
+import Tsheji from '@/components/Tsheji'
+import Tpaihang from '@/components/Tpaihang'
+
 
 Vue.use(Router);
 
@@ -18,7 +27,8 @@ export default new Router({
     {
       path: '/Huashi',
       name: 'Huashi',
-      component: Huashi
+      component: Huashi,
+	    
     },
     {
       path: '/fabu',
@@ -34,7 +44,50 @@ export default new Router({
       path: '/wode',
       name: 'Wode',
       component: Wode
+    }, 
+    {
+      path:'/tuijian',
+      name:'Tuijian',
+      component:Tuijian
+    },
+    {
+      path:'/chushou',
+      name:'Chushou',
+      component:Chushou
+    },
+    {
+      path:'/Thuazuo',
+      name:'Thuazuo',
+      component:Thuazuo
+    },
+    {
+      path:'/Tyonghu',
+      name:'Tyonghu',
+      component:Tyonghu
+    },
+    {
+      path:'/Thuodong',
+      name:'Thuodong',
+      component:Thuodong
+    },
+    {
+      path:'/Tzhenggao',
+      name:'Tzhenggao',
+      component:Tzhenggao
+    },
+    {
+      path:'/Tsheji',
+      name:'Tsheji',
+      component:Tsheji
+    },
+    {
+      path:'/Tpaihang',
+      name:'Tpaihang',
+      component:Tpaihang
     }
+
+       
+      
     
   ]
 })

@@ -1,6 +1,37 @@
 <template>
   <div id="yuegao">
-  	约稿
+  	<div class="nul" style="width:100%;height:10px;background:#ccc">
+	  		
+	</div>
+  	<div v-for="item in datalist" class="yuegao"> 
+	  	<a class="loop" href=""> 
+	  		<h3 class="title" style="font-size:18px;margin-bottom: 10px"> {{item.id}}、{{item.title}}</h3> 
+	  		<div  class="tags"> 
+			  	<span class="uk-badge"> 商业稿   </span> 
+			  	<span v-for="items in item.tag.split(',')" class="uk-badge">{{items}}</span>
+			  	
+	  		</div> 
+	  		<div class="project"> 
+	  			<div class="uk"> 
+	  				<div class="uk-width"> {{item.costMin}}～{{item.costMax}}  元 </div> 
+	  				<div class="uk-width">{{(new Date(item.createTime)).getFullYear()}}-{{(new Date(item.createTime)).getMonth()+1}}-{{(new Date(item.createTime)).getDate()}}</div>
+	  			</div> 
+	  		</div> 	
+	  		<div class="meta">
+	  			<div  class="uk-width-1"> 
+	  				<i class="iconfont">&#xe632;</i>&nbsp;{{item.account.nickname.slice(0,3)}}... 
+	  			</div> 
+	  			<div class="uk-width-1"> 应征：{{item.signupCount}}人 </div> 
+	  			<div v-if="item.number !== 0" class="uk-width-1"> 需求：{{item.number}} </div> 
+	  			<div v-else="item.number == 0" class="uk-width-1"> 需求：不限 </div> 
+	  		</div> 
+	  	</a> 
+	  	<div class="nul" style="padding-right:20px;padding-left:20px;
+	  	width:100%;height:10px;background:#ccc;margin-left:-20px;margin-right:-20px">
+	  		
+	  	</div>
+  	</div>
+  	<next></next>  
   	<footers></footers>			
   </div>	
 </template>
@@ -13,6 +44,7 @@
       function(){
         return {
          datalist:[]
+         
         }  
       },
     mounted:function(){
@@ -20,7 +52,8 @@
       axios.get(`/api/projects?page=1&perPage=10&doing=0`)
         .then(function(res){
          console.log(res.data.data);
-         that.datalist = res.data.artists;
+         that.datalist = res.data.data;
+        
          
         })
         .catch(function(){
@@ -34,12 +67,53 @@
   @function px2rem($px){
   @return $px/100px *1rem;
   }
-  // #app {
-  //   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  //   -webkit-font-smoothing: antialiased;
-  //   -moz-osx-font-smoothing: grayscale;
-  //   text-align: center;
-  //   color: #2c3e50;
-  //   // margin-top: px2rem(60px);
-  // }
+  a{
+  	color:black;
+  	text-decoration: none;
+  }
+  
+  .yuegao{
+  	overflow: hidden;
+  	padding:px2rem(15px);
+  	font-size:px2rem(16px);
+  	.loop{
+  		overflow: hidden;
+  		.title{
+  			font-weight:normal;
+  		}
+  		.tags{
+  			overflow: hidden;
+  			.uk-badge{
+  				border:px2rem(1px) solid #87ceeb;
+  				padding:0 px2rem(3px);
+  				margin:0 px2rem(3px);
+  				color: #87ceeb;
+  				font-size:px2rem(14px);
+  			}
+  		}
+  		.project{
+  			overflow: hidden;
+  			margin-top:px2rem(10px);
+
+  			.uk-width{
+  				text-align: center;
+  				width:45%;
+  				float:left;
+  				background:#444444;
+  				color:white;
+  				padding:px2rem(5px);
+  			}
+  		}
+  		.meta{
+  			overflow: hidden;
+  			margin-top:px2rem(10px);
+  			.uk-width-1{
+  				width:30%;
+  				float:left;
+  				font-size:px2rem(14px);
+  				color:#b5b5b5;
+  			}
+  		}
+  	}
+  }
 </style>

@@ -64,18 +64,18 @@
 
   .lop{
   	text-decoration: none;
-  	color:black;
+  	// color:black;
   }
 
 
   .footer{
-
-
+    border:px2rem(2px) solid #ccc;
+    padding-top:px2rem(5px);
   	
    	background:white;
    	position:fixed;
-   	bottom:px2rem(0px);
-   	left:0;
+   	bottom:0;   	
+    left:0;
 
     
     width:100%;

@@ -4,8 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import footers from './components/footer'
+import huashiHeader from './components/huashiHeader'
+import next from './components/next'
+
 
 Vue.component(footers.name,footers)
+Vue.component(huashiHeader.name,huashiHeader)
+Vue.component(next.name,next)
+
+
 
 Vue.config.productionTip = false
 

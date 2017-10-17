@@ -1,11 +1,11 @@
 <template>
-  <div id="Huashi">
-    <huashiHeader></huashiHeader>  
-
+  <div class="tuijian">
+  	<huashiHeader></huashiHeader>
   	<div v-for="item in datalist" class="huashi" index="0"> 
      <div class="huashi-1"> 
       <a  class="huashi-1-1" href="/accounts/11212"> 
        <img class="cl" :src="item.avatarUrl"> 
+       <img class="icon" src="http://odun6jycz.bkt.clouddn.com/recommend_red.png">
       </a>
       <div class="huashi-1-2"> 
        <a class="nickname" href="/accounts/11212">{{item.nickname}}</a> 
@@ -14,7 +14,7 @@
        </button>  
       </div> 
       <div class="tags"> 
-       <span v-for="items in item.tags.slice(0,3)" class="uk-badge">{{items}}</span>
+       <span v-for="a in item.tags.slice(0,3)" class="uk-badge">{{a}}</span>
       </div> 
       <hr style="margin: 115px 0;
      width:100%;position:absolute;top:px2rem(100px);left:0;">
@@ -22,8 +22,8 @@
      
      <div class="uk-grid"> 
       <div class="uk-width-1-4"> 
-       <a v-for="itemss in item.works" class="as" href="/work/18355">
-        <img :src="itemss.cover">
+       <a v-for="items in item.works"  class="as" href="/work/18355">
+        <img :src="items.cover">
        </a> 
       </div>
       <div class="m1">
@@ -31,17 +31,15 @@
       </div> 
      </div> 
     </div>
-
-    <next></next> 
-  	<footers></footers>		
-  </div>	
+    <next></next>	
+  	<footers></footers>
+  </div>
 </template>
 
 <script>
-
-  import axios from 'axios';
+import axios from 'axios';
   export default {
-    name: 'Huashi',
+    name: 'tuijian',
     data: 
       function(){
         return {
@@ -50,7 +48,7 @@
       },
     mounted:function(){
       var that = this;
-      axios.get(`/api/artists`)
+      axios.get(`/api/artists?page=1&perPage=10&official=1`)
         .then(function(res){
          console.log(res.data);
          that.datalist = res.data.data;
@@ -62,20 +60,13 @@
     }
   }
 </script>
-
+<!-- <link rel="stylesheet" href="../assets/font_dt4awi7oqfpkqpvi/iconfont.css"> -->
 <style lang="scss" scoped>
   @function px2rem($px){
   @return $px/100px *1rem;
   }
 
-  a{
-    text-decoration: none;
-    color:black;
-  }
-  
-  
-
-  .huashi{
+    .huashi{
    width:100%;
    overflow:hidden;
    .huashi-1{
@@ -120,21 +111,12 @@
     .tags{
      position:relative;
      top:px2rem(100px);
-     left:0;
+     left:px2rem(-130px);
      font-size:px2rem(14px);
-     
-
      span{
-      display:inline-block;
-      width:px2rem(60px);
-      text-align: center;
-      height:px2rem(20px);
       border:px2rem(1px) solid #87ceeb;
       color:#87ceeb;
-      
-      margin-right:px2rem(-130px);
-      
-      
+      padding:0 4px;
      }
     }
    }
@@ -168,5 +150,4 @@
    top:0;
    left:0
   }
-  
 </style>

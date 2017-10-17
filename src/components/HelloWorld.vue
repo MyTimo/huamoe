@@ -19,11 +19,36 @@
 
     <div class="tubiao">
       <ul>
-        <li><i class="iconfont">&#xe680;</i><span>画作</span></li>
-        <li><i class="iconfont">&#xe667;</i><span>设计</span></li>
-        <li><i class="iconfont">&#xe64e;</i><span>征稿</span></li>
-        <li><i class="iconfont">&#xe658;</i><span>活动</span></li>
-        <li><i class="iconfont">&#xe62d;</i><span>用户</span></li>
+        <li>
+          <router-link to="/Thuazuo">
+            <i class="iconfont">&#xe680;</i>
+            <span>画作</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Tsheji">
+            <i class="iconfont">&#xe667;</i>
+            <span>设计</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Tzhenggao">
+            <i class="iconfont">&#xe64e;</i>
+            <span>征稿</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Thuodong">
+            <i class="iconfont">&#xe658;</i>
+            <span>活动</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Tyonghu">
+            <i class="iconfont">&#xe62d;</i>
+            <span>用户</span>
+          </router-link>
+        </li>
       </ul>
     </div>
 
@@ -48,7 +73,7 @@
       <div class="title-1">
         <h3>{{item.id}}、{{item.title}}</h3> 
         <div class="tags"> 
-          <span v-for="is in item.tag.split(',')" class="y1">{{is}}</span>
+          <span v-for="is in item.tag.split(',').slice(0,4)" class="y1">{{is}}</span>
           
         </div>  
         <div class="project"> 
@@ -118,7 +143,7 @@
         </a>  
         <div class="product-desc"> 
          <div class="meta"> 
-          <span class="price">￥{{item.price}}～{{item.priceMax}}</span> 
+          <span class="price" style="font-size:14px">￥{{item.price}}～{{item.priceMax}}</span> 
           <span class="product-hot">人气：{{item.zanCount}}</span> 
          </div> 
          <div class="title">{{item.title}}</div> 
@@ -155,7 +180,7 @@
       <div class="huashi-1-2"> 
        <a class="nickname" href="/accounts/11212">{{item.nickname}}</a> 
        <button class="uk-button" type="button"> 
-        <b class="uk-icon-plus">+</b>&nbsp;关注   
+        <b>+</b>&nbsp;关注   
        </button>  
       </div> 
       <div class="tags"> 
@@ -179,7 +204,7 @@
 
     <div class="w1" style="width:100%;background:#ededf1;height:50px;
     padding:10px 0 10px 0">
-     <div class="w1-1" style="text-align:center;width:100%;background:#e66988;height:40px;font-size:20px;color:white;padding-bottom:40px;">
+     <div class="w1-1" style="text-align:center;width:100%;background:#e66988;height:40px;font-size:20px;color:white;padding-bottom:50px;">
       <span style="line-height:40px;">更多推荐画师</span>
      </div>
     </div>

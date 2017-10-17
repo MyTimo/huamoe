@@ -15,5 +15,5 @@ export default {
   @return $px/100px *1rem;
   }
 </style>
-<style src="./assets/font_hno76w4jzrpphkt9/iconfont.css"></style>
+<style src="./assets/font_xv9zg4na1psqbyb9/iconfont.css"></style>
 
