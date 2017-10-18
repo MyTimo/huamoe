@@ -1,8 +1,8 @@
 <template>
   <div id="Thuazuo">
   	<div class="uk-flex"> 
-      <router-link to="/Thuazuo" active-class="blue" exact class="tab" >最新发布</router-link> 
-      <router-link to="/Tpaihang" active-class="blue" exact class="tab" >排行榜</router-link> 
+      <router-link to="/Thuazuo" active-class="blue" exact class="tab">最新发布</router-link> 
+      <router-link to="/Tpaihang" active-class="blue" exact class="tab">排行榜</router-link> 
     </div>
 
     <div v-for="item in datalist" class="uk-width-1-2"> 

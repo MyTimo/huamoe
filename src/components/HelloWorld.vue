@@ -62,34 +62,38 @@
         </div>
         <div class="x1_2">
           <div>
-            <span class="x1_2_1">更多</span>
-            <span> >> </span>
+            <router-link to="/yuegao"><span class="x1_2_1">更多</span>
+              <span> >> </span>
+            </router-link>
           </div>
         </div>
       </div>
     </div>
 
     <div v-for="item in list" class="title-0"> 
-      <div class="title-1">
-        <h3>{{item.id}}、{{item.title}}</h3> 
-        <div class="tags"> 
-          <span v-for="is in item.tag.split(',').slice(0,4)" class="y1">{{is}}</span>
-          
-        </div>  
-        <div class="project"> 
-          <div class="grid"> 
-            <div class="uk-width-1-2"> {{item.costMin}}～{{item.costMax}}元 </div> 
-            <div class="uk-width-1-2">2017-10-30</div> 
+      <!-- <router-link to="'/gaojian/'+item.id"> -->
+      <router-link :to="{name:'gaojian',params:{t_id:item.id}}">
+        <div class="title-1">
+          <h3>{{item.id}}、{{item.title}}</h3> 
+          <div class="tags"> 
+            <span v-for="is in item.tag.split(',').slice(0,4)" class="y1">{{is}}</span>
+            
+          </div>  
+          <div class="project"> 
+            <div class="grid"> 
+              <div class="uk-width-1-2"> {{item.costMin}}～{{item.costMax}}元 </div> 
+              <div class="uk-width-1-2">2017-10-30</div> 
+            </div> 
+          </div>  
+          <div class="meta"> 
+            <div class="meta-1"> 
+              <i class="iconfont">&#xe62d;</i>&nbsp;{{item.account.nickname}}
+            </div> 
+            <div class="meta-2"> 应征：{{item.signupCount}}人 </div> 
+            <div class="meta-2"> 需求：{{item.number}}张 </div> 
           </div> 
-        </div>  
-        <div class="meta"> 
-          <div class="meta-1"> 
-            <i class="iconfont">&#xe62d;</i>&nbsp;{{item.account.nickname}}
-          </div> 
-          <div class="meta-2"> 应征：{{item.signupCount}}人 </div> 
-          <div class="meta-2"> 需求：{{item.number}}张 </div> 
         </div> 
-      </div> 
+      </router-link>
     </div>
     
     <div class="x1 z1">
@@ -102,8 +106,9 @@
         </div>
         <div class="x1_2">
           <div>
-            <span class="x1_2_1">更多</span>
-            <span> >> </span>
+            <router-link to="/Tpaihang"><span class="x1_2_1">更多</span>
+              <span> >> </span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -111,9 +116,11 @@
 
     <div v-for="(item,index) in it" class="picture">
       <div class="picture-1">
-        <img :src="item.cover" alt="">
-        <span class="p1">{{index+1}}</span>
-        <span class="p2">{{item.nickname}}</span>
+        <router-link :to="{name:'tupian',params:{p_id:item.id}}">
+          <img :src="item.cover" alt="">
+          <span class="p1">{{index+1}}</span>
+          <span class="p2">{{item.nickname}}</span>
+        </router-link>
       </div>
     </div>
 
@@ -127,8 +134,9 @@
         </div>
         <div class="x1_2">
           <div>
-            <span class="x1_2_1">更多</span>
-            <span> >> </span>
+            <router-link to="/Tsheji"><span class="x1_2_1">更多</span>
+              <span> >> </span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -164,8 +172,9 @@
         </div>
         <div class="x1_2">
           <div>
-            <span class="x1_2_1">更多</span>
-            <span> >> </span>
+            <router-link to="/tuijian"><span class="x1_2_1">更多</span>
+              <span> >> </span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -205,7 +214,11 @@
     <div class="w1" style="width:100%;background:#ededf1;height:50px;
     padding:10px 0 10px 0">
      <div class="w1-1" style="text-align:center;width:100%;background:#e66988;height:40px;font-size:20px;color:white;padding-bottom:50px;">
-      <span style="line-height:40px;">更多推荐画师</span>
+
+      <router-link to="/tuijian"><span style="line-height:40px;">更多推荐画师</span>
+      </router-link>
+
+      
      </div>
     </div>
     <footers></footers>
@@ -231,7 +244,9 @@ import 'vue-swipe/dist/vue-swipe.css';
          listes:[],
          lis:[],
          itemsss:[],
-         is:[]
+         is:[],
+         t_id:''
+         
         }  
       },
       components:{

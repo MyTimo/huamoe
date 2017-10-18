@@ -1,6 +1,6 @@
 <template>
   
-  	<div class="footer">
+  	<div class="footer" >
   	
      
       <div class="b">
@@ -69,6 +69,7 @@
 
 
   .footer{
+    margin-top:px2rem(-50px);
     border:px2rem(2px) solid #ccc;
     padding-top:px2rem(5px);
   	

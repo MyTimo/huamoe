@@ -13,6 +13,9 @@ import Thuodong from '@/components/Thuodong'
 import Tzhenggao from '@/components/Tzhenggao'
 import Tsheji from '@/components/Tsheji'
 import Tpaihang from '@/components/Tpaihang'
+import Tqitian from '@/components/Tqitian'
+import gaojian from '@/components/gaojian'
+import tupian from '@/components/tupian'
 
 
 Vue.use(Router);
@@ -84,8 +87,22 @@ export default new Router({
       path:'/Tpaihang',
       name:'Tpaihang',
       component:Tpaihang
+    },
+    {
+      path:'/Tqitian',
+      name:'Tqitian',
+      component:Tqitian
+    },
+    {
+      path:'/gaojian/:t_id?',
+      name:'gaojian',
+      component:gaojian
+    },
+    {
+      path:'/tupian/:p_id?',
+      name:'tupian',
+      component:tupian
     }
-
        
       
     

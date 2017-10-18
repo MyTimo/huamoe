@@ -1,6 +1,12 @@
 <template>
   <div id="Tyonghu">
-  	Tyonghu
+  	<div v-for="item in datalist" class="panel" style="margin-top: 10px;padding:15px;background:#f5f5f5;color: #444;"> 
+      <h3>{{item.name}}</h3> 
+      <p v-for="itemss in item.items"> {{itemss.name}}：
+        <a :href="itemss.link" style="color:#4fbff3"> {{itemss.qq}}</a> 
+      </p>
+      
+    </div>
   	<footers></footers>		
   </div>	
 </template>
@@ -20,7 +26,7 @@
       axios.get(`/api/index/qun`)
         .then(function(res){
          console.log(res.data);
-         that.datalist = res.data.data;
+         that.datalist = res.data;
          
         })
         .catch(function(){
@@ -34,12 +40,16 @@
   @function px2rem($px){
   @return $px/100px *1rem;
   }
-  // #app {
-  //   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  //   -webkit-font-smoothing: antialiased;
-  //   -moz-osx-font-smoothing: grayscale;
-  //   text-align: center;
-  //   color: #2c3e50;
-  //   // margin-top: px2rem(60px);
-  // }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  h3{
+    font-size:px2rem(20px);
+  } 
+   
+  p{
+    font-size:px2rem(16px);
+  }
 </style>

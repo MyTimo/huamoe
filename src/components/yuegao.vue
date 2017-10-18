@@ -2,7 +2,7 @@
   <div id="yuegao">
   	<div class="nul" style="width:100%;height:10px;background:#ccc">
 	  		
-	</div>
+	   </div>
   	<div v-for="item in datalist" class="yuegao"> 
 	  	<a class="loop" href=""> 
 	  		<h3 class="title" style="font-size:18px;margin-bottom: 10px"> {{item.id}}、{{item.title}}</h3> 

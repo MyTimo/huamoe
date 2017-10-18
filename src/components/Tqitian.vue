@@ -1,5 +1,5 @@
 <template>
-  <div id="Tpaihang">
+  <div id="Tqitian">
   	<div class="uk-flex"> 
       <router-link to="/Thuazuo" active-class="blue" exact class="tab" >最新发布</router-link> 
       <router-link to="/Tpaihang" active-class="blue" exact class="tab" >排行榜</router-link> 
@@ -22,7 +22,9 @@
         <span class="p2">{{item.nickname}}</span>
       </div>
     </div>
-
+    <div class="jiazai">
+      已经加载完
+    </div>
   	<footers></footers>		
   </div>	
 </template>
@@ -30,7 +32,7 @@
 <script>
   import axios from 'axios';
   export default {
-    name: 'Tpaihang',
+    name: 'Tqitian',
     data: 
       function(){
         return {
@@ -39,7 +41,7 @@
       },
     mounted:function(){
       var that = this;
-      axios.get(`/api/works/ranking/11`)
+      axios.get(`/api/works/ranking/12`)
         .then(function(res){
          console.log(res.data);
          that.datalist = res.data;
@@ -56,18 +58,19 @@
   @function px2rem($px){
   @return $px/100px *1rem;
   }
+  
+  // 
+  // 
+  
 
-  
-  
-  
-  
+
   .uk-flex{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:px2rem(37px);
-    font-size:px2rem(16px);
+    
     background:white;
     .tab{
       display:inline-block;
@@ -75,6 +78,7 @@
       float:left;
       text-align:center;
       padding:px2rem(5px) 0;
+      font-size:px2rem(16px);
     }
   }
   .blue{
@@ -133,5 +137,13 @@
 
       }
     }
+  }
+
+
+  .jiazai{
+    width:100%;
+    height:px2rem(90px);
+    font-size:px2rem(30px);
+  
   }
 </style>
