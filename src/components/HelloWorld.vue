@@ -201,9 +201,9 @@
      
      <div class="uk-grid"> 
       <div class="uk-width-1-4"> 
-       <a v-for="items in item.works"  class="as" href="/work/18355">
+       <router-link :to="{name:'tupian',params:{p_id:items.workId}}" v-for="items in item.works"  class="as">
         <img :src="items.cover">
-       </a> 
+       </router-link> 
       </div>
       <div class="m1">
        
@@ -245,7 +245,8 @@ import 'vue-swipe/dist/vue-swipe.css';
          lis:[],
          itemsss:[],
          is:[],
-         t_id:''
+         t_id:'',
+         op:[]
          
         }  
       },
@@ -258,6 +259,7 @@ import 'vue-swipe/dist/vue-swipe.css';
       axios.get(`/api/index`)
         .then(function(res){
          console.log(res.data);
+         that.op = res.data;
          that.datalist = res.data.artists;
          that.list = res.data.projects;
          that.it = res.data.rankTop6;
@@ -640,7 +642,7 @@ import 'vue-swipe/dist/vue-swipe.css';
        margin-top:px2rem(100px);
 
        img{
-        margin-top:px2rem(40px);
+        margin-top:px2rem(60px);
         width:21%;
         float:left;
         padding:px2rem(5px);

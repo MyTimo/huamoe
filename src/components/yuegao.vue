@@ -1,10 +1,9 @@
 <template>
   <div id="yuegao">
-  	<div class="nul" style="width:100%;height:10px;background:#ccc">
-	  		
-	   </div>
+  	<div class="nul" style="width:100%;height:10px;background:#ccc">	  		
+    </div>
   	<div v-for="item in datalist" class="yuegao"> 
-	  	<a class="loop" href=""> 
+	  	<router-link :to="{name:'gaojian',params:{t_id:item.id}}" class="loop"> 
 	  		<h3 class="title" style="font-size:18px;margin-bottom: 10px"> {{item.id}}、{{item.title}}</h3> 
 	  		<div  class="tags"> 
 			  	<span class="uk-badge"> 商业稿   </span> 
@@ -25,11 +24,12 @@
 	  			<div v-if="item.number !== 0" class="uk-width-1"> 需求：{{item.number}} </div> 
 	  			<div v-else="item.number == 0" class="uk-width-1"> 需求：不限 </div> 
 	  		</div> 
-	  	</a> 
+	  	</router-link> 
 	  	<div class="nul" style="padding-right:20px;padding-left:20px;
 	  	width:100%;height:10px;background:#ccc;margin-left:-20px;margin-right:-20px">
 	  		
 	  	</div>
+
   	</div>
   	<next></next>  
   	<footers></footers>			

@@ -22,9 +22,9 @@
      
      <div class="uk-grid"> 
       <div class="uk-width-1-4"> 
-       <a v-for="itemss in item.works" class="as" href="/work/18355">
-        <img :src="itemss.cover">
-       </a> 
+       <router-link :to="{name:'tupian',params:{p_id:items.workId}}" v-for="items in item.works"  class="as">
+        <img :src="items.cover">
+       </router-link> 
       </div>
       <div class="m1">
        

@@ -1,10 +1,12 @@
 <template>
   <div id="gaojian">
   	<div class="gaojian">
+      <router-link to="/">
       <div style="width:100%" class="title">
         <span class="x1" ><</span>
         <span class="x2">{{datalist.id}}、{{datalist.title}}</span>
       </div>
+      </router-link>
       <div class="time">
       由<span style="color:blue">{{datalist.account.nickname}}</span> 发布于{{new Date(datalist.account.createTime).getFullYear()}}-{{new Date(datalist.account.createTime).getMonth()+1}}-{{new Date(datalist.account.createTime).getDate()}} {{new Date(datalist.account.createTime).getHours()}}:{{new Date(datalist.account.createTime).getMinutes()}}:{{new Date(datalist.account.createTime).getSeconds()}}
       </div>

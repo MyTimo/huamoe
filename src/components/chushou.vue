@@ -2,10 +2,10 @@
   <div class="chushou">
   	<huashiHeader></huashiHeader>
   	<div v-for="item in datalist" class="uk-width-1-2"> 
-	  	<a   style="display:block; margin-bottom: 10px !important" href="/accounts/383"> 
+	  	<router-link :to="{name:'tupian',params:{p_id:item.id}}"  style="display:block; margin-bottom: 10px !important" href="/accounts/383"> 
 	  		<img class="uk-thumbnail-expand" :src="item.avatarUrl"> 
 	  		<div class="nowrap" style="font-size: 14px;padding: 5px;background-color: white">{{item.recommendSort}}、{{item.nickname}}</div>	  		 
-	  	</a> 
+	  	</router-link> 
   	</div>
   	
   	<next></next>	

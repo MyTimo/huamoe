@@ -8,6 +8,8 @@ import huashiHeader from './components/huashiHeader'
 import next from './components/next'
 
 
+
+
 Vue.component(footers.name,footers)
 Vue.component(huashiHeader.name,huashiHeader)
 Vue.component(next.name,next)

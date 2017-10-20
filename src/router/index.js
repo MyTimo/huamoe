@@ -16,6 +16,8 @@ import Tpaihang from '@/components/Tpaihang'
 import Tqitian from '@/components/Tqitian'
 import gaojian from '@/components/gaojian'
 import tupian from '@/components/tupian'
+import login from '@/components/login'
+import register from '@/components/register'
 
 
 Vue.use(Router);
@@ -102,6 +104,16 @@ export default new Router({
       path:'/tupian/:p_id?',
       name:'tupian',
       component:tupian
+    },
+    {
+      path:'/register',
+      name:'register',
+      component:register
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:login
     }
        
       

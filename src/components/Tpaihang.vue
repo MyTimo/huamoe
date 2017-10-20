@@ -7,16 +7,16 @@
 
     <div class="uk-button-group"> 
       <div class="x1">
-        <router-link to="/Tpaihang" active-class="bck" exact class="uk-active" href="/works/ranking">昨日点赞榜</router-link> 
+        <router-link to="/Tpaihang" active-class="bck" exact class="uk-active">昨日点赞榜</router-link> 
       </div>
       <div class="x2">
-        <router-link to="/Tqitian" active-class="bck" exact class="uk-active" href="/works/ranking/12">七日点赞榜</router-link> 
+        <router-link to="/Tqitian" active-class="bck" exact class="uk-active">七日点赞榜</router-link> 
       </div>
      
     </div>
 
-    <div v-for="(item,index) in datalist" class="picture">
-      <div class="picture-1">
+    <div class="picture">
+      <div v-for="(item,index) in datalist" class="picture-1">
         <img :src="item.cover" alt="">
         <span class="p1">{{index+1}}</span>
         <span class="p2">{{item.nickname}}</span>
@@ -30,12 +30,30 @@
 <script>
   import axios from 'axios';
   export default {
-    name: 'Tpaihang',
+    name: 'Tpaihang', 
+    watch:{
+            "$route":["getData"]
+        },
+
     data: 
       function(){
         return {
          datalist: []      
         }  
+      },
+      methods:{
+        getData:function(){
+          var that = this;
+        axios.get(`/api/works/ranking/11`)
+        .then(function(res){
+         console.log(res.data);
+         that.datalist = res.data;
+         
+        })
+        .catch(function(){
+          console.log("出错了");
+        })
+        }
       },
     mounted:function(){
       var that = this;
