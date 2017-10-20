@@ -36,7 +36,7 @@
           <router-link to="/wode">我的应征</router-link>
         </div>       
       </div>
-      <div class="description">
+      <div class="description" v-html="datalist.description" style="font-size:16px">
         
       </div>
     </div>
